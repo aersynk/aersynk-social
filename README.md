@@ -5,3 +5,5 @@ Buffer downloads each file from its public link here, so nothing private belongs
 no keys, passwords, lead data or client files.
 
 Folders are organised by month: `posts/2026-10/`, `posts/2026-11/` and so on.
+
+Weekly automated runs follow [RUNBOOK.md](RUNBOOK.md).
