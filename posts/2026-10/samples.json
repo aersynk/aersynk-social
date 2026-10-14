@@ -1,0 +1,53 @@
+{
+  "status": "awaiting approval",
+  "posts": [
+    {
+      "id": "01",
+      "title": "Meet AerSynk",
+      "date": "2026-10-19T18:30:00+02:00",
+      "format": "carousel",
+      "assets": ["01-meet-aersynk/slide-1.jpg", "01-meet-aersynk/slide-2.jpg", "01-meet-aersynk/slide-3.jpg", "01-meet-aersynk/slide-4.jpg", "01-meet-aersynk/slide-5.jpg", "01-meet-aersynk/slide-6.jpg"],
+      "alt": [
+        "AerSynk cover slide: Drone data for surveys. Drone response for emergencies. Three stacked map layers in cyan, blue and violet.",
+        "We fly: a BVLOS-certified remote pilot for hire, for agriculture, mapping and surveying, security, inspection and filming. Line drawing of a drone over a field.",
+        "We advise: the right drone, payload and workflow for the job. Three payload cards, RGB camera, thermal and LiDAR, with thermal selected.",
+        "We build AerSynk Survey: every sensor on one map, from flight to finished data. Working prototype on demo data. Stacked map layers.",
+        "We build AerSynk Rescue: one SOS press starts the whole rescue, starting on Table Mountain. In development, not live yet. A drone flying from its dock toward an SOS signal on a contour map.",
+        "Work with us: Have a site, a job or a question? aersynk.io, WhatsApp or call 073 290 4298, aersynk@gmail.com."
+      ],
+      "instagram": "Meet AerSynk. We fly drones, advise on drones, and build drone software, here in South Africa.\n\nPilot for hire: a BVLOS-certified remote pilot for agriculture, mapping and surveying, security, inspection and filming.\n\nConsulting: the right aircraft, payloads and workflow for the job, so you do not pay for the wrong kit.\n\nAerSynk Survey: software that puts every sensor on one map. A working prototype, running on demo data for now.\n\nAerSynk Rescue: drone-assisted rescue for hikers, starting on Table Mountain. In development, not live yet.\n\nFollow along as we build. Have a site, a job or a question? Send us a message, or visit aersynk.io (link in bio).\n\n#AerSynk #DroneServices #DronePilot #DroneMapping #DroneSurvey #Photogrammetry #DroneTechnology #Agritech #Mining #SouthAfrica #CapeTown",
+      "facebook": "Meet AerSynk. We fly drones, advise on drones, and build drone software, here in South Africa.\n\nPilot for hire: a BVLOS-certified remote pilot for agriculture, mapping and surveying, security, inspection and filming.\nConsulting: the right aircraft, payloads and workflow for the job.\nAerSynk Survey: software that puts every sensor on one map (working prototype on demo data).\nAerSynk Rescue: drone-assisted rescue for hikers, starting on Table Mountain (in development, not live yet).\n\nHave a site, a job or a question? Message us, WhatsApp 073 290 4298, or visit https://aersynk.io\n\n#AerSynk #DroneServices #SouthAfrica"
+    },
+    {
+      "id": "02",
+      "title": "LinkedIn: why AerSynk exists",
+      "date": "2026-10-20T08:00:00+02:00",
+      "format": "single image",
+      "assets": ["02-linkedin-why-aersynk/image.jpg"],
+      "alt": ["Why AerSynk exists: built by people who fly drones for a living. Diagram of photos, LiDAR, magnetics and spectral data flowing from four separate boxes into one workspace."],
+      "linkedin": "Why AerSynk exists.\n\nAs a Drone Solutions Advisor, our founder Kwazi Khumalo helped clients find the right drone setup. One problem kept coming up: survey teams lose hours moving data between separate tools. Photos in one program, LiDAR in another, magnetic and spectral data in specialist software, and a GIS analyst lining it all up by hand.\n\nAerSynk Survey is our answer: one workspace where every flight and every sensor sits on the same map, from planning to finished deliverable. Today it is a working prototype on demo data, and we are building real-data processing one sensor at a time.\n\nAlongside the software, we fly. Kwazi is a BVLOS-certified remote pilot available for agriculture, mapping, security, inspection and filming work (flown under an approved partner operator's certificate), and we consult on aircraft, payloads and workflow.\n\nIf you run surveys or exploration programmes and this problem sounds familiar, we would like to hear how you handle it today. Request early access at https://aersynk.io\n\n#DroneSurvey #Geospatial #Mining #Photogrammetry #SouthAfrica"
+    },
+    {
+      "id": "03",
+      "title": "Reel: from flight to finished map",
+      "date": "2026-10-21T12:30:00+02:00",
+      "format": "reel",
+      "assets": ["03-reel-flight-to-map/reel.mp4"],
+      "cover": "03-reel-flight-to-map/cover.jpg",
+      "ai_generated": true,
+      "instagram": "How does a drone survey become a map?\n\n1. Plan: mark out the area to survey.\n2. Fly: the drone flies parallel lines, taking overlapping photos.\n3. Process: software matches the photos and builds an orthomosaic (a map you can measure on) and an elevation model of the ground.\n\nThat is photogrammetry. The overlap between photos is what lets the software work out the shape of the ground.\n\nPlanning a mapping job? Send us a message or visit aersynk.io.\n\nAnimated illustration, not real survey data. Voice-over is computer-generated.\n\n#DroneMapping #Photogrammetry #DroneSurvey #Orthomosaic #Surveying #GIS #Mining #Construction #SouthAfrica #AerSynk",
+      "facebook": "How does a drone survey become a map? Plan the area, fly parallel lines with overlapping photos, then process them into a map you can measure and a model of the ground's height.\n\nPlanning a mapping job? Message us or visit https://aersynk.io\n\n(Animated illustration, not real survey data. Voice-over is computer-generated.)\n\n#DroneMapping #Photogrammetry #SouthAfrica",
+      "linkedin_note": "Reused on LinkedIn as post 04 on 21 Oct 08:00 with a longer technical caption, written after approval."
+    },
+    {
+      "id": "06",
+      "title": "What is GSD?",
+      "date": "2026-10-23T12:30:00+02:00",
+      "format": "single image",
+      "assets": ["06-what-is-gsd/image.jpg"],
+      "alt": ["What is GSD? Ground sampling distance is the size of one image pixel on the ground. Illustration: a low drone covers a small area with a fine pixel grid; a high drone covers a larger area with a coarse grid."],
+      "instagram": "What is GSD?\n\nGround sampling distance is the size of one image pixel on the ground. It is the number that shapes a whole drone survey.\n\nFly lower: smaller pixels and more detail, but more flight lines and processing time.\nFly higher: bigger pixels and faster coverage, but less detail.\n\nThe right GSD depends on the decision you need to make. Checking cracks on a structure needs far finer detail than a site overview.\n\nSave this for your next survey brief. Questions? Send us a message.\n\n#GSD #DroneMapping #Photogrammetry #DroneSurvey #Surveying #RemoteSensing #GIS #SouthAfrica #AerSynk",
+      "facebook": "What is GSD? Ground sampling distance is the size of one image pixel on the ground. Fly lower for more detail, higher for faster coverage. The right choice depends on what you need to decide.\n\nPlanning a survey? Message us or visit https://aersynk.io\n\n#DroneMapping #SouthAfrica"
+    }
+  ]
+}

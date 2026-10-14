@@ -1,0 +1,45 @@
+{
+  "period": "2026-10-19 to 2026-11-17",
+  "timezone": "Africa/Johannesburg",
+  "channels": {
+    "instagram": "6acf217c778b240e2f04408b",
+    "facebook": "6acf2865778b240e2f0466f4",
+    "linkedin": "6acf4c94778b240e2f05d74a"
+  },
+  "slots": {
+    "instagram_facebook": ["Mon 18:30", "Wed 12:30", "Fri 12:30", "Sun 18:00"],
+    "linkedin": ["Tue 08:00", "Wed 08:00", "Thu 08:00"]
+  },
+  "posts": [
+    {"id": "01", "date": "2026-10-19", "time": "18:30", "platforms": ["instagram", "facebook"], "format": "carousel", "pillar": "Inside AerSynk", "topic": "Meet AerSynk: we fly, we advise, we build", "cta": "Visit aersynk.io or WhatsApp 073 290 4298", "sample": true},
+    {"id": "02", "date": "2026-10-20", "time": "08:00", "platforms": ["linkedin"], "format": "single image", "pillar": "Inside AerSynk", "topic": "Why AerSynk exists: what advising clients on drones taught us", "cta": "Follow the page, or get in touch at aersynk.io", "sample": true},
+    {"id": "03", "date": "2026-10-21", "time": "12:30", "platforms": ["instagram", "facebook"], "format": "reel", "pillar": "Explain the tech", "topic": "From flight to finished map in 20 seconds", "cta": "Planning a mapping job? aersynk.io", "sample": true},
+    {"id": "04", "date": "2026-10-21", "time": "08:00", "platforms": ["linkedin"], "format": "video", "pillar": "Explain the tech", "topic": "From flight to finished map (Reel reused)", "cta": "Request a pilot at aersynk.io"},
+    {"id": "05", "date": "2026-10-22", "time": "08:00", "platforms": ["linkedin"], "format": "single image", "pillar": "Myth vs fact", "topic": "RTK drones still need independent check points", "cta": "Ask us about survey workflow at aersynk.io"},
+    {"id": "06", "date": "2026-10-23", "time": "12:30", "platforms": ["instagram", "facebook"], "format": "single image", "pillar": "Explain the tech", "topic": "What is GSD (ground sampling distance)?", "cta": "Save this for your next survey brief", "sample": true},
+    {"id": "07", "date": "2026-10-25", "time": "18:00", "platforms": ["instagram", "facebook"], "format": "carousel", "pillar": "Explain the tech", "topic": "Orthomosaic, DSM, DTM, contours: which do you need?", "cta": "Not sure which output you need? Send us a message"},
+    {"id": "08", "date": "2026-10-26", "time": "18:30", "platforms": ["instagram", "facebook"], "format": "carousel", "pillar": "Industry use", "topic": "Thermal drone inspection of solar plants", "cta": "Request a pilot at aersynk.io"},
+    {"id": "09", "date": "2026-10-27", "time": "08:00", "platforms": ["linkedin"], "format": "single image", "pillar": "Industry use", "topic": "Solar PV thermography: conditions matter (IEC TS 62446-3)", "cta": "Request a pilot at aersynk.io"},
+    {"id": "10", "date": "2026-10-28", "time": "12:30", "platforms": ["instagram", "facebook"], "format": "reel", "pillar": "Explain the tech", "topic": "How drones measure stockpile volumes", "cta": "Planning monthly volume surveys? aersynk.io"},
+    {"id": "11", "date": "2026-10-28", "time": "08:00", "platforms": ["linkedin"], "format": "video", "pillar": "Explain the tech", "topic": "Stockpile volumes you can compare month to month", "cta": "Talk to us at aersynk.io"},
+    {"id": "12", "date": "2026-10-29", "time": "08:00", "platforms": ["linkedin"], "format": "single image", "pillar": "Business value", "topic": "In-house drone team or hire a pilot? Count the full cost", "cta": "Ask about consulting at aersynk.io"},
+    {"id": "13", "date": "2026-10-30", "time": "12:30", "platforms": ["instagram", "facebook"], "format": "single image", "pillar": "Work with us", "topic": "Pilot for hire: agriculture, mapping, security, inspection, filming", "cta": "Request a pilot at aersynk.io or WhatsApp 073 290 4298"},
+    {"id": "14", "date": "2026-11-01", "time": "18:00", "platforms": ["instagram", "facebook"], "format": "carousel", "pillar": "Industry use", "topic": "What an NDVI crop map can and cannot tell you", "cta": "Farming? Send us a message about your block"},
+    {"id": "15", "date": "2026-11-02", "time": "18:30", "platforms": ["instagram", "facebook"], "format": "carousel", "pillar": "Rules and safety", "topic": "Hiring a drone service in SA? Ask for these two things (ROC and pilot licence)", "cta": "Questions about the rules? Send us a message"},
+    {"id": "16", "date": "2026-11-03", "time": "08:00", "platforms": ["linkedin"], "format": "single image", "pillar": "Rules and safety", "topic": "Commercial drone work needs the right approvals (SACAA Part 101)", "cta": "Ask about consulting at aersynk.io"},
+    {"id": "17", "date": "2026-11-04", "time": "12:30", "platforms": ["instagram", "facebook"], "format": "reel", "pillar": "What we are building", "topic": "AerSynk Survey: every sensor on one map (prototype, demo data)", "cta": "Survey or exploration team? Request early access at aersynk.io"},
+    {"id": "18", "date": "2026-11-04", "time": "08:00", "platforms": ["linkedin"], "format": "video", "pillar": "What we are building", "topic": "Why multi-sensor drone data is hard to combine", "cta": "Request early access at aersynk.io"},
+    {"id": "19", "date": "2026-11-05", "time": "08:00", "platforms": ["linkedin"], "format": "single image", "pillar": "Explain the tech", "topic": "Coordinate systems in SA: Hartebeesthoek94 and Lo projections", "cta": "Follow for more practical survey notes"},
+    {"id": "20", "date": "2026-11-06", "time": "12:30", "platforms": ["instagram", "facebook"], "format": "single image", "pillar": "Myth vs fact", "topic": "Myth: thermal cameras see through walls", "cta": "Security site? Send us a message"},
+    {"id": "21", "date": "2026-11-08", "time": "18:00", "platforms": ["instagram", "facebook"], "format": "carousel", "pillar": "Explain the tech", "topic": "LiDAR or photogrammetry? It depends what covers the ground", "cta": "Not sure which sensor? Ask us"},
+    {"id": "22", "date": "2026-11-09", "time": "18:30", "platforms": ["instagram", "facebook"], "format": "carousel", "pillar": "Business value", "topic": "5 questions to answer before you buy a drone", "cta": "Ask about consulting at aersynk.io"},
+    {"id": "23", "date": "2026-11-10", "time": "08:00", "platforms": ["linkedin"], "format": "single image", "pillar": "Business value", "topic": "Start with the question, not the drone", "cta": "Ask about consulting at aersynk.io"},
+    {"id": "24", "date": "2026-11-11", "time": "12:30", "platforms": ["instagram", "facebook"], "format": "reel", "pillar": "What we are building", "topic": "AerSynk Rescue: one SOS press starts the rescue (in development)", "cta": "Rescue org, guide or park? Register as a partner at aersynk.io"},
+    {"id": "25", "date": "2026-11-11", "time": "08:00", "platforms": ["linkedin"], "format": "video", "pillar": "What we are building", "topic": "AerSynk Rescue: looking for rollout partners around Table Mountain", "cta": "Register as a partner at aersynk.io"},
+    {"id": "26", "date": "2026-11-12", "time": "08:00", "platforms": ["linkedin"], "format": "single image", "pillar": "Business value", "topic": "What makes a drone inspection report useful", "cta": "Request a pilot at aersynk.io"},
+    {"id": "27", "date": "2026-11-13", "time": "12:30", "platforms": ["instagram", "facebook"], "format": "single image", "pillar": "Industry use", "topic": "Roof inspections: look before anyone climbs", "cta": "Request a pilot at aersynk.io"},
+    {"id": "28", "date": "2026-11-15", "time": "18:00", "platforms": ["instagram", "facebook"], "format": "carousel", "pillar": "Industry use", "topic": "What a drone dock does (and what it does not replace)", "cta": "Thinking about docks? Ask about consulting"},
+    {"id": "29", "date": "2026-11-16", "time": "18:30", "platforms": ["instagram", "facebook"], "format": "carousel", "pillar": "Industry use", "topic": "Spotting uneven irrigation from the air", "cta": "Farming? Send us a message about your block"},
+    {"id": "30", "date": "2026-11-17", "time": "08:00", "platforms": ["linkedin"], "format": "single image", "pillar": "Business value", "topic": "Open data formats keep your drone data yours", "cta": "Follow for more practical survey notes"}
+  ]
+}
