@@ -16,17 +16,10 @@
   "buffer_org": "6acf206beeddaaa8667f8afa"
  },
  "weekly_pattern": {
-  "instagram": {
-   "Mon": "carousel 18:30",
-   "Tue": "Reel (new) 18:30",
-   "Wed": "Reel (original plan) 12:30",
-   "Thu": "Reel (new) 12:30",
-   "Fri": "single image 12:30",
-   "Sun": "carousel 18:00"
-  },
-  "tiktok": "every Reel, same day 19:30",
-  "linkedin": "the original 13 LinkedIn posts, 08:00 Tue/Wed/Thu",
-  "limit": "Buffer free plan: max 10 scheduled posts per channel at a time"
+  "instagram": "2 a day, every day, 12:30 and 18:30, alternating Reel and image post",
+  "tiktok": "2 Reels a day, 12:30 and 19:30",
+  "linkedin": "1 a day Mon-Fri at 08:00",
+  "limit": "Buffer free plan: max 10 scheduled posts per channel at a time; daily task refills to 10"
  },
  "batch_1": "posts/2026-10/batch-1.json (19-29 Oct, scheduled)",
  "next": [
@@ -118,5 +111,183 @@
    "linkedin": "30 image",
    "status": "to build"
   }
- ]
+ ],
+ "scheduled_now": {
+  "instagram": [
+   [
+    "2026-10-14 18:30",
+    "01 Meet AerSynk (carousel)"
+   ],
+   [
+    "2026-10-15 12:30",
+    "03 Flight to map (Reel)"
+   ],
+   [
+    "2026-10-15 18:30",
+    "06 What is GSD (image)"
+   ],
+   [
+    "2026-10-16 12:30",
+    "R05 RTK (Reel)"
+   ],
+   [
+    "2026-10-16 18:30",
+    "07 Ortho/DSM/DTM (carousel)"
+   ],
+   [
+    "2026-10-17 12:30",
+    "R08 Thermal myth (Reel)"
+   ],
+   [
+    "2026-10-17 18:30",
+    "08 Thermal solar (carousel)"
+   ],
+   [
+    "2026-10-18 12:30",
+    "R09 How a job runs (Reel)"
+   ],
+   [
+    "2026-10-18 18:30",
+    "R04 Stockpile (Reel)"
+   ],
+   [
+    "2026-10-19 12:30",
+    "R10 Drone docks (Reel)"
+   ]
+  ],
+  "tiktok": [
+   [
+    "2026-10-14 19:30",
+    "03"
+   ],
+   [
+    "2026-10-15 12:30",
+    "R02 (6acf5c0972ac8a207846a09a)"
+   ],
+   [
+    "2026-10-15 19:30",
+    "R05"
+   ],
+   [
+    "2026-10-16 12:30",
+    "R06 (6acf5c0c72ac8a207846a1fc)"
+   ],
+   [
+    "2026-10-16 19:30",
+    "R08"
+   ],
+   [
+    "2026-10-17 12:30",
+    "R03 (6acf5c0f4aaa0bb6abd53cd0)"
+   ],
+   [
+    "2026-10-17 19:30",
+    "R09"
+   ],
+   [
+    "2026-10-18 12:30",
+    "R07 (6acf5c11635a3a53a6f25775)"
+   ],
+   [
+    "2026-10-18 19:30",
+    "R04"
+   ],
+   [
+    "2026-10-19 19:30",
+    "R10"
+   ]
+  ],
+  "linkedin": [
+   [
+    "2026-10-14 17:30",
+    "02 Why AerSynk"
+   ],
+   [
+    "2026-10-15 08:00",
+    "04 Flight to map video"
+   ],
+   [
+    "2026-10-16 08:00",
+    "05 RTK"
+   ],
+   [
+    "2026-10-19 08:00",
+    "R06 video (6acf5c474aaa0bb6abd54515)"
+   ],
+   [
+    "2026-10-20 08:00",
+    "09 Solar PV"
+   ],
+   [
+    "2026-10-21 08:00",
+    "11 Stockpile video"
+   ],
+   [
+    "2026-10-22 08:00",
+    "R07 video (6acf5c4b0901e7a65827f224)"
+   ],
+   [
+    "2026-10-23 08:00",
+    "12 In-house or hire"
+   ],
+   [
+    "2026-10-26 08:00",
+    "R02 video (6acf5c4ef23e87ac782392e3)"
+   ],
+   [
+    "2026-10-27 08:00",
+    "R03 video (6acf5c524aaa0bb6abd54669)"
+   ]
+  ]
+ },
+ "used": {
+  "instagram": [
+   "01",
+   "03",
+   "06",
+   "R05",
+   "07",
+   "R08",
+   "08",
+   "R09",
+   "R04",
+   "R10"
+  ],
+  "tiktok": [
+   "03",
+   "R02",
+   "R05",
+   "R06",
+   "R08",
+   "R03",
+   "R09",
+   "R07",
+   "R04",
+   "R10"
+  ],
+  "linkedin": [
+   "02",
+   "04(03 video)",
+   "05",
+   "R06",
+   "09",
+   "11(R04 video)",
+   "R07",
+   "12",
+   "R02",
+   "R03"
+  ]
+ },
+ "built_not_yet_used": {
+  "instagram": [
+   "13 pilot for hire (single)",
+   "14 NDVI (carousel)",
+   "R02",
+   "R03",
+   "R06",
+   "R07"
+  ],
+  "tiktok": [],
+  "linkedin": []
+ }
 }

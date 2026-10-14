@@ -1,6 +1,6 @@
-# Weekly run: how the AerSynk social queue is kept full
+# Daily run: how the AerSynk social queue is kept full
 
-Read this first on every scheduled run. It is the rulebook for building and scheduling posts.
+Read this first on every scheduled run (daily, 06:47 SAST). It is the rulebook for building and scheduling posts.
 
 ## Accounts (Buffer, free plan)
 - Organisation: `6acf206beeddaaa8667f8afa`
@@ -9,13 +9,19 @@ Read this first on every scheduled run. It is the rulebook for building and sche
 - TikTok `6acf513b778b240e2f05f437`
 - Free plan: at most 10 scheduled posts per channel at any time. Never pay for anything or upgrade.
 
-## Plan
-- `plan/calendar-2026-10.json`: the original 30-day plan. Keep it; every image post in it still goes out.
-- `plan/calendar-combined.json`: images plus Reels, weekly pattern and what comes next.
-- Instagram: Mon carousel 18:30, Tue new Reel 18:30, Wed original-plan Reel 12:30, Thu new Reel 12:30, Fri single image 12:30, Sun carousel 18:00.
-- TikTok: every Reel, same day 19:30. LinkedIn: original-plan posts at 08:00.
-- After the 30-day plan runs out (17 Nov), continue the same pattern with new educational topics from aersynk.io's services.
-  Mix images and Reels; never Reels only.
+## Plan (from 14 Oct 2026: maximum posting on the free plan)
+- The free plan allows 10 scheduled posts per channel at once (not per week). The task runs DAILY and tops every
+  channel back up to 10, so posting volume is limited only by the cadence below.
+- Instagram (auto-shares to Facebook): 2 a day, every day. 12:30 and 18:30. Alternate one Reel and one image
+  post (carousel or single) each day, so the feed stays a mix; never Reels only.
+- TikTok: 2 Reels a day, 12:30 and 19:30. Use the day's Instagram Reel plus one more Reel.
+- LinkedIn: 1 a day, Monday to Friday, 08:00 (a 17:30 slot is fine when a morning has passed). No weekends.
+- Daily build target: about 2 new Reels and 1 new image post, plus a LinkedIn caption for one of them.
+- Content order: `plan/calendar-combined.json` (`next` list) first, which includes the original 30-day plan in
+  `plan/calendar-2026-10.json` (keep it; every image post in it still goes out). After that, new educational
+  topics from aersynk.io's services: mapping and surveying, inspections, agriculture, security, drone integration
+  and consulting, AerSynk Survey (prototype) and AerSynk Rescue (in development).
+- Never repost the same file to the same channel. Reels can go to Instagram, TikTok and LinkedIn once each.
 
 ## Building
 1. `pip install --break-system-packages piper-tts playwright` (Chromium is already installed; do not run `playwright install`).
