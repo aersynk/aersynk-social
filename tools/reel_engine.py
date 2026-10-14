@@ -34,12 +34,12 @@ VOICE = Path("/tmp/piper-voices/en-us-ryan-high.onnx")
 # Voice engine: "kokoro" (natural, default) or "piper" (older, robotic). Both are free and run offline.
 ENGINE = os.environ.get("REEL_VOICE_ENGINE", "kokoro")
 KOKORO_DIR = Path(os.environ.get("KOKORO_DIR", "/tmp/kokoro"))
-KOKORO_VOICE = os.environ.get("REEL_VOICE", "am_michael")
-KOKORO_SPEED = float(os.environ.get("REEL_VOICE_SPEED", "0.9"))  # a little slower and calmer
+KOKORO_VOICE = os.environ.get("REEL_VOICE", "bf_emma")  # chosen by Kwazi 14 Oct 2026: British woman
+KOKORO_SPEED = float(os.environ.get("REEL_VOICE_SPEED", "1.0"))  # natural pace: not slow, not fast
 SR = 24000 if ENGINE == "kokoro" else 22050
 _kokoro = None
-LEAD = 0.45    # seconds of silence before each line
-TAIL = 0.75    # seconds after each line before the next scene
+LEAD = 0.4    # seconds of silence before each line
+TAIL = 0.6    # seconds after each line before the next scene
 END_SECONDS = 4.2
 
 
@@ -136,14 +136,14 @@ def build(spec):
     norm.replace(wav)
     (out_dir / "reel.html").write_text(page(spec, timings, end_start, total))
     (out_dir / "timing.json").write_text(json.dumps({"scenes": timings, "end": end_start, "total": round(total, 2)}, indent=1))
-    mp4 = out_dir / "reel.mp4"
+    mp4 = out_dir / spec.get("mp4_name", "reel.mp4")
     subprocess.run([sys.executable, str(ROOT / "tools" / "render_reel.py"), str(out_dir / "reel.html"), str(mp4),
                     "--seconds", f"{total:.2f}", "--audio", str(wav)], check=True)
     # cover frame: middle of the last content scene
     last = timings[-1]
     cover_t = (last["a"] + last["b"]) / 2
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{cover_t:.2f}", "-i", str(mp4), "-frames:v", "1", "-q:v", "3",
-                    str(out_dir / "cover.jpg")], check=True)
+                    str(out_dir / spec.get("cover_name", "cover.jpg"))], check=True)
     wav.unlink()
     return {"mp4": mp4, "seconds": round(total, 1), "cover_ms": int(cover_t * 1000)}
 
