@@ -24,9 +24,13 @@ Read this first on every scheduled run (daily, 06:47 SAST). It is the rulebook f
 - Never repost the same file to the same channel. Reels can go to Instagram, TikTok and LinkedIn once each.
 
 ## Building
-1. `pip install --break-system-packages piper-tts playwright` (Chromium is already installed; do not run `playwright install`).
-2. Voice: download `https://github.com/rhasspy/piper/releases/download/v0.0.2/voice-en-us-ryan-high.tar.gz`
-   and extract it so `/tmp/piper-voices/en-us-ryan-high.onnx` (and its `.onnx.json`) exist.
+1. `pip install --break-system-packages playwright` (Chromium is already installed; do not run `playwright install`).
+2. Voice (Kokoro, free and offline, natural-sounding; replaces the old robotic Piper voice):
+   `pip install --break-system-packages kokoro-onnx soundfile`, then download both files into `/tmp/kokoro/`:
+   `https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx` and
+   `https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin`
+   (Hugging Face is blocked here; GitHub works). The voice is set in `tools/reel_engine.py` (`REEL_VOICE`,
+   default `am_michael`). Use the same voice on every Reel. Piper remains available with `REEL_VOICE_ENGINE=piper`.
 3. Reels: add a spec to a `tools/reels_YYYY_MM.py` file (see `tools/reels_2026_10.py`, `tools/reel_engine.py`, `tools/art.py`),
    run it, then check frames with `tools/contact_sheet.py` and fix overlaps or overflowing text before publishing.
 4. Images: follow `tools/images_2026_10.py` (1080x1350, `tools/render.py`). Look at every image before using it.

@@ -29,8 +29,15 @@ import array
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+import os
 VOICE = Path("/tmp/piper-voices/en-us-ryan-high.onnx")
-SR = 22050
+# Voice engine: "kokoro" (natural, default) or "piper" (older, robotic). Both are free and run offline.
+ENGINE = os.environ.get("REEL_VOICE_ENGINE", "kokoro")
+KOKORO_DIR = Path(os.environ.get("KOKORO_DIR", "/tmp/kokoro"))
+KOKORO_VOICE = os.environ.get("REEL_VOICE", "am_michael")
+KOKORO_SPEED = float(os.environ.get("REEL_VOICE_SPEED", "1.0"))
+SR = 24000 if ENGINE == "kokoro" else 22050
+_kokoro = None
 LEAD = 0.35    # seconds of silence before each line
 TAIL = 0.55    # seconds after each line before the next scene
 END_SECONDS = 4.2
@@ -49,10 +56,26 @@ def display(text):
 
 
 def tts(text, out):
+    if ENGINE == "kokoro":
+        return tts_kokoro(text, out)
     subprocess.run([sys.executable, "-m", "piper", "-m", str(VOICE), "--length-scale", "1.05", "-f", str(out)],
                    input=text.encode(), check=True, capture_output=True)
     w = wave.open(str(out))
     return w.getnframes() / w.getframerate()
+
+
+def tts_kokoro(text, out):
+    global _kokoro
+    import numpy as np
+    from kokoro_onnx import Kokoro
+    if _kokoro is None:
+        _kokoro = Kokoro(str(KOKORO_DIR / "kokoro-v1.0.onnx"), str(KOKORO_DIR / "voices-v1.0.bin"))
+    lang = "en-gb" if KOKORO_VOICE.startswith("b") else "en-us"
+    audio, sr = _kokoro.create(text, voice=KOKORO_VOICE, speed=KOKORO_SPEED, lang=lang)
+    assert sr == SR, (sr, SR)
+    pcm = (np.clip(audio, -1, 1) * 32767).astype("<i2")
+    w = wave.open(str(out), "wb"); w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr); w.writeframes(pcm.tobytes()); w.close()
+    return len(pcm) / sr
 
 
 def build(spec):
@@ -94,6 +117,11 @@ def build(spec):
     for f in tmp.iterdir():
         f.unlink()
     tmp.rmdir()
+    # loudness: bring the voice up to normal social-video level (about -16 LUFS)
+    norm = out_dir / "voice_norm.wav"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(wav), "-af", "loudnorm=I=-16:TP=-1.5:LRA=11",
+                    "-ar", str(SR), str(norm)], check=True)
+    norm.replace(wav)
     (out_dir / "reel.html").write_text(page(spec, timings, end_start, total))
     (out_dir / "timing.json").write_text(json.dumps({"scenes": timings, "end": end_start, "total": round(total, 2)}, indent=1))
     mp4 = out_dir / "reel.mp4"
