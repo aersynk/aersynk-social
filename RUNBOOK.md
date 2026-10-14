@@ -31,6 +31,8 @@ Read this first on every scheduled run (daily, 06:47 SAST). It is the rulebook f
    `https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin`
    (Hugging Face is blocked here; GitHub works). The voice is set in `tools/reel_engine.py` (`REEL_VOICE`,
    default `am_michael`). Use the same voice on every Reel. Piper remains available with `REEL_VOICE_ENGINE=piper`.
+   Pronunciation: AerSynk is said "Air Sync" and aersynk.io is said "air sync dot eye oh" (handled in `SAY` in
+   `tools/reel_engine.py`; add any new brand words there). Voice speed 0.9 for a calm pace.
 3. Reels: add a spec to a `tools/reels_YYYY_MM.py` file (see `tools/reels_2026_10.py`, `tools/reel_engine.py`, `tools/art.py`),
    run it, then check frames with `tools/contact_sheet.py` and fix overlaps or overflowing text before publishing.
 4. Images: follow `tools/images_2026_10.py` (1080x1350, `tools/render.py`). Look at every image before using it.

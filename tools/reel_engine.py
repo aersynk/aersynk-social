@@ -35,11 +35,11 @@ VOICE = Path("/tmp/piper-voices/en-us-ryan-high.onnx")
 ENGINE = os.environ.get("REEL_VOICE_ENGINE", "kokoro")
 KOKORO_DIR = Path(os.environ.get("KOKORO_DIR", "/tmp/kokoro"))
 KOKORO_VOICE = os.environ.get("REEL_VOICE", "am_michael")
-KOKORO_SPEED = float(os.environ.get("REEL_VOICE_SPEED", "1.0"))
+KOKORO_SPEED = float(os.environ.get("REEL_VOICE_SPEED", "0.9"))  # a little slower and calmer
 SR = 24000 if ENGINE == "kokoro" else 22050
 _kokoro = None
-LEAD = 0.35    # seconds of silence before each line
-TAIL = 0.55    # seconds after each line before the next scene
+LEAD = 0.45    # seconds of silence before each line
+TAIL = 0.75    # seconds after each line before the next scene
 END_SECONDS = 4.2
 
 
@@ -55,7 +55,19 @@ def display(text):
     return text
 
 
+# How brand words must be SAID (subtitles still show them written normally).
+SAY = [("aersynk dot io", "air sync dot eye oh"), ("aersynk.io", "air sync dot eye oh"),
+       ("AerSynk", "Air Sync"), ("aersynk", "air sync")]
+
+
+def speakable(text):
+    for written, said in SAY:
+        text = text.replace(written, said)
+    return text
+
+
 def tts(text, out):
+    text = speakable(text)
     if ENGINE == "kokoro":
         return tts_kokoro(text, out)
     subprocess.run([sys.executable, "-m", "piper", "-m", str(VOICE), "--length-scale", "1.05", "-f", str(out)],
