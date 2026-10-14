@@ -1,0 +1,122 @@
+{
+ "title": "AerSynk combined calendar: images + Reels (original 30-day plan kept)",
+ "updated": "2026-10-14",
+ "timezone": "Africa/Johannesburg (+02:00)",
+ "channels": {
+  "instagram": {
+   "id": "6acf217c778b240e2f04408b",
+   "note": "auto-shares to the Facebook page via Meta (set in the Instagram app)"
+  },
+  "linkedin": {
+   "id": "6acf4c94778b240e2f05d74a"
+  },
+  "tiktok": {
+   "id": "6acf513b778b240e2f05f437"
+  },
+  "buffer_org": "6acf206beeddaaa8667f8afa"
+ },
+ "weekly_pattern": {
+  "instagram": {
+   "Mon": "carousel 18:30",
+   "Tue": "Reel (new) 18:30",
+   "Wed": "Reel (original plan) 12:30",
+   "Thu": "Reel (new) 12:30",
+   "Fri": "single image 12:30",
+   "Sun": "carousel 18:00"
+  },
+  "tiktok": "every Reel, same day 19:30",
+  "linkedin": "the original 13 LinkedIn posts, 08:00 Tue/Wed/Thu",
+  "limit": "Buffer free plan: max 10 scheduled posts per channel at a time"
+ },
+ "batch_1": "posts/2026-10/batch-1.json (19-29 Oct, scheduled)",
+ "next": [
+  {
+   "date": "2026-10-30",
+   "ig": "13 pilot for hire (single)",
+   "status": "built"
+  },
+  {
+   "date": "2026-11-01",
+   "ig": "14 NDVI (carousel)",
+   "status": "built"
+  },
+  {
+   "date": "2026-11-02",
+   "ig": "15 ROC: what it means when you hire (carousel)",
+   "status": "to build"
+  },
+  {
+   "date": "2026-11-03",
+   "ig": "R02 What is GSD (Reel)",
+   "tiktok": "R02",
+   "status": "built"
+  },
+  {
+   "date": "2026-11-04",
+   "ig": "17 Survey Reel (original plan)",
+   "tiktok": "17",
+   "linkedin": "16 image",
+   "status": "to build"
+  },
+  {
+   "date": "2026-11-05",
+   "ig": "R03 Thermal solar (Reel)",
+   "tiktok": "R03",
+   "linkedin": "18 video (Survey Reel)",
+   "status": "built / to build"
+  },
+  {
+   "date": "2026-11-06",
+   "ig": "20 thermal myth (single)",
+   "linkedin": "19 image",
+   "status": "to build"
+  },
+  {
+   "date": "2026-11-08",
+   "ig": "21 LiDAR vs photogrammetry (carousel)",
+   "status": "to build"
+  },
+  {
+   "date": "2026-11-09",
+   "ig": "22 five questions before hiring a pilot (carousel)",
+   "status": "to build"
+  },
+  {
+   "date": "2026-11-10",
+   "ig": "R07 NDVI (Reel)",
+   "tiktok": "R07",
+   "linkedin": "23 image",
+   "status": "built / to build"
+  },
+  {
+   "date": "2026-11-11",
+   "ig": "24 Rescue Reel (original plan)",
+   "tiktok": "24",
+   "status": "to build"
+  },
+  {
+   "date": "2026-11-12",
+   "ig": "R06 Ortho/DSM/DTM (Reel)",
+   "tiktok": "R06",
+   "linkedin": "25 video (Rescue Reel)",
+   "status": "built / to build"
+  },
+  {
+   "date": "2026-11-13",
+   "ig": "27 roof inspection (single)",
+   "linkedin": "26 image",
+   "status": "to build"
+  },
+  {
+   "date": "2026-11-15",
+   "ig": "28 drone docks (carousel)",
+   "status": "to build"
+  },
+  {
+   "date": "2026-11-16",
+   "ig": "29 irrigation (carousel)",
+   "linkedin": "30 image",
+   "status": "to build"
+  }
+ ]
+}
