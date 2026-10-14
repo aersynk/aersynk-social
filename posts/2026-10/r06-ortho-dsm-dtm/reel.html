@@ -24,8 +24,8 @@ text { font-family: "Instrument Sans"; }
 <p class="l">aersynk.io</p><p class="s">WhatsApp or call 073 290 4298</p>
 <p class="n">Animated illustration. Voice is computer-generated.</p></div>
 <script>
-const META = [{"a": 0.0, "b": 6.6, "step": "Mapping outputs", "title": "Three outputs, three questions.", "sub": "Orthomosaic, DSM, DTM. Three drone mapping outputs that answer different questions."}, {"a": 6.6, "b": 12.446, "step": "Orthomosaic", "title": "A map you can measure on.", "sub": "An orthomosaic is a map image to scale. You can measure distances and areas on it."}, {"a": 12.446, "b": 19.035, "step": "DSM", "title": "Everything on top.", "sub": "A digital surface model records the height of everything on top: trees, buildings and vehicles."}, {"a": 19.035, "b": 24.891, "step": "DTM", "title": "The bare ground.", "sub": "A digital terrain model is the bare ground, with those removed. Contours come from here."}];
-const END = 24.891;
+const META = [{"a": 0.0, "b": 7.216, "step": "Mapping outputs", "title": "Three outputs, three questions.", "sub": "Orthomosaic, DSM, DTM. Three drone mapping outputs that answer different questions."}, {"a": 7.216, "b": 13.621, "step": "Orthomosaic", "title": "A map you can measure on.", "sub": "An orthomosaic is a map image to scale. You can measure distances and areas on it."}, {"a": 13.621, "b": 20.389, "step": "DSM", "title": "Everything on top.", "sub": "A digital surface model records the height of everything on top: trees, buildings and vehicles."}, {"a": 20.389, "b": 27.265, "step": "DTM", "title": "The bare ground.", "sub": "A digital terrain model is the bare ground, with those removed. Contours come from here."}];
+const END = 27.265;
 const clamp = (x,a=0,b=1) => Math.max(a, Math.min(b, x));
 const prog = (t,a,b) => b<=a ? (t>=a?1:0) : clamp((t-a)/(b-a));
 const ease = x => x<.5 ? 2*x*x : 1-Math.pow(-2*x+2,2)/2;

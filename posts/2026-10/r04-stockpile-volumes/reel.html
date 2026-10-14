@@ -24,8 +24,8 @@ text { font-family: "Instrument Sans"; }
 <p class="l">aersynk.io</p><p class="s">WhatsApp or call 073 290 4298</p>
 <p class="n">Animated illustration. Voice is computer-generated.</p></div>
 <script>
-const META = [{"a": 0.0, "b": 2.943, "step": "Stockpiles", "title": "How drones measure a pile.", "sub": "How does a drone measure a stockpile?"}, {"a": 2.943, "b": 9.881, "step": "Step 1: Survey", "title": "The whole surface, measured.", "sub": "Overlapping photos become millions of 3D points across the whole surface, not just a few spot heights."}, {"a": 9.881, "b": 15.123, "step": "Step 2: Base", "title": "Define what it sits on.", "sub": "Next, define the base surface the pile sits on, and state it in the report."}, {"a": 15.123, "b": 19.564, "step": "Step 3: Volume", "title": "Surface minus base.", "sub": "The volume is the space between the measured surface and that base."}, {"a": 19.564, "b": 24.758, "step": "Every month", "title": "Same method, every month.", "sub": "Use the same method every month, and the trend actually means something."}];
-const END = 24.758;
+const META = [{"a": 0.0, "b": 3.291, "step": "Stockpiles", "title": "How drones measure a pile.", "sub": "How does a drone measure a stockpile?"}, {"a": 3.291, "b": 10.869, "step": "Step 1: Survey", "title": "The whole surface, measured.", "sub": "Overlapping photos become millions of 3D points across the whole surface, not just a few spot heights."}, {"a": 10.869, "b": 16.677, "step": "Step 2: Base", "title": "Define what it sits on.", "sub": "Next, define the base surface the pile sits on, and state it in the report."}, {"a": 16.677, "b": 21.355, "step": "Step 3: Volume", "title": "Surface minus base.", "sub": "The volume is the space between the measured surface and that base."}, {"a": 21.355, "b": 26.951, "step": "Every month", "title": "Same method, every month.", "sub": "Use the same method every month, and the trend actually means something."}];
+const END = 26.951;
 const clamp = (x,a=0,b=1) => Math.max(a, Math.min(b, x));
 const prog = (t,a,b) => b<=a ? (t>=a?1:0) : clamp((t-a)/(b-a));
 const ease = x => x<.5 ? 2*x*x : 1-Math.pow(-2*x+2,2)/2;

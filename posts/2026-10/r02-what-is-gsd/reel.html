@@ -24,8 +24,8 @@ text { font-family: "Instrument Sans"; }
 <p class="l">aersynk.io</p><p class="s">WhatsApp or call 073 290 4298</p>
 <p class="n">Animated illustration. Voice is computer-generated.</p></div>
 <script>
-const META = [{"a": 0.0, "b": 4.395, "step": "", "title": "What is GSD?", "sub": "What is GSD, and why does it matter for a drone survey?"}, {"a": 4.395, "b": 9.079, "step": "Ground sampling distance", "title": "One pixel, on the ground.", "sub": "GSD is the size of one image pixel, measured on the ground."}, {"a": 9.079, "b": 14.461, "step": "Fly lower", "title": "More detail, more flying.", "sub": "Fly lower, and each pixel covers less ground, so you see more detail."}, {"a": 14.461, "b": 19.25, "step": "Fly higher", "title": "Faster, less detail.", "sub": "Fly higher, and you cover more ground faster, but with less detail."}, {"a": 19.25, "b": 23.36, "step": "The rule", "title": "Pick it for the decision.", "sub": "So choose the GSD for the decision you need to make."}];
-const END = 23.360;
+const META = [{"a": 0.0, "b": 4.805, "step": "", "title": "What is GSD?", "sub": "What is GSD, and why does it matter for a drone survey?"}, {"a": 4.805, "b": 10.272, "step": "Ground sampling distance", "title": "One pixel, on the ground.", "sub": "GSD is the size of one image pixel, measured on the ground."}, {"a": 10.272, "b": 15.504, "step": "Fly lower", "title": "More detail, more flying.", "sub": "Fly lower, and each pixel covers less ground, so you see more detail."}, {"a": 15.504, "b": 20.587, "step": "Fly higher", "title": "Faster, less detail.", "sub": "Fly higher, and you cover more ground faster, but with less detail."}, {"a": 20.587, "b": 25.643, "step": "The rule", "title": "Pick it for the decision.", "sub": "So choose the GSD for the decision you need to make."}];
+const END = 25.643;
 const clamp = (x,a=0,b=1) => Math.max(a, Math.min(b, x));
 const prog = (t,a,b) => b<=a ? (t>=a?1:0) : clamp((t-a)/(b-a));
 const ease = x => x<.5 ? 2*x*x : 1-Math.pow(-2*x+2,2)/2;

@@ -24,8 +24,8 @@ text { font-family: "Instrument Sans"; }
 <p class="l">aersynk.io</p><p class="s">WhatsApp or call 073 290 4298</p>
 <p class="n">Animated illustration. Voice is computer-generated.</p></div>
 <script>
-const META = [{"a": 0.0, "b": 3.443, "step": "Myth", "title": "\u201cThermal sees through walls.\u201d", "sub": "Myth: thermal cameras can see through walls."}, {"a": 3.443, "b": 9.66, "step": "What thermal sees", "title": "Surface heat.", "sub": "Thermal cameras show differences in surface temperature. People and vehicles stand out at night."}, {"a": 9.66, "b": 13.544, "step": "What it cannot", "title": "Walls, roofs and glass block it.", "sub": "But walls, roofs and glass block the view completely."}, {"a": 13.544, "b": 18.784, "step": "And weather", "title": "Weather cuts the range.", "sub": "Rain, fog and high humidity also reduce how far it can see clearly."}];
-const END = 18.784;
+const META = [{"a": 0.0, "b": 3.781, "step": "Myth", "title": "\u201cThermal sees through walls.\u201d", "sub": "Myth: thermal cameras can see through walls."}, {"a": 3.781, "b": 10.656, "step": "What thermal sees", "title": "Surface heat.", "sub": "Thermal cameras show differences in surface temperature. People and vehicles stand out at night."}, {"a": 10.656, "b": 14.885, "step": "What it cannot", "title": "Walls, roofs and glass block it.", "sub": "But walls, roofs and glass block the view completely."}, {"a": 14.885, "b": 20.865, "step": "And weather", "title": "Weather cuts the range.", "sub": "Rain, fog and high humidity also reduce how far it can see clearly."}];
+const END = 20.865;
 const clamp = (x,a=0,b=1) => Math.max(a, Math.min(b, x));
 const prog = (t,a,b) => b<=a ? (t>=a?1:0) : clamp((t-a)/(b-a));
 const ease = x => x<.5 ? 2*x*x : 1-Math.pow(-2*x+2,2)/2;

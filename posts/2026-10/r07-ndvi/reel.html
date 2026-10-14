@@ -24,8 +24,8 @@ text { font-family: "Instrument Sans"; }
 <p class="l">aersynk.io</p><p class="s">WhatsApp or call 073 290 4298</p>
 <p class="n">Animated illustration. Voice is computer-generated.</p></div>
 <script>
-const META = [{"a": 0.0, "b": 3.895, "step": "Crop maps", "title": "An NDVI map shows where to look.", "sub": "An NDVI map shows you where to look in a field."}, {"a": 3.895, "b": 9.822, "step": "How it works", "title": "Near-infrared versus red.", "sub": "Healthy plants reflect lots of near-infrared light. NDVI compares it with red light."}, {"a": 9.822, "b": 13.95, "step": "What it shows", "title": "Low values flag stress.", "sub": "Low values highlight stressed areas across the whole block."}, {"a": 13.95, "b": 21.303, "step": "What it does not", "title": "Then check on the ground.", "sub": "But the cause could be water, nutrients, pests or disease, so the diagnosis still happens on the ground."}];
-const END = 21.303;
+const META = [{"a": 0.0, "b": 4.315, "step": "Crop maps", "title": "An NDVI map shows where to look.", "sub": "An NDVI map shows you where to look in a field."}, {"a": 4.315, "b": 11.253, "step": "How it works", "title": "Near-infrared versus red.", "sub": "Healthy plants reflect lots of near-infrared light. NDVI compares it with red light."}, {"a": 11.253, "b": 15.717, "step": "What it shows", "title": "Low values flag stress.", "sub": "Low values highlight stressed areas across the whole block."}, {"a": 15.717, "b": 23.511, "step": "What it does not", "title": "Then check on the ground.", "sub": "But the cause could be water, nutrients, pests or disease, so the diagnosis still happens on the ground."}];
+const END = 23.511;
 const clamp = (x,a=0,b=1) => Math.max(a, Math.min(b, x));
 const prog = (t,a,b) => b<=a ? (t>=a?1:0) : clamp((t-a)/(b-a));
 const ease = x => x<.5 ? 2*x*x : 1-Math.pow(-2*x+2,2)/2;

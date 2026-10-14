@@ -1,0 +1,140 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Reel: flight to map</title>
+<link rel="stylesheet" href="../../../templates/base.css">
+<style>
+:root { --h: 1920px; }
+.sheet { padding: 110px 90px 120px; }
+.top img { height: 36px; }
+#title { font-family: "Bricolage Grotesque"; font-weight: 800; font-stretch: 90%; font-size: 96px; line-height: 1; letter-spacing: -0.025em; margin-top: 70px; min-height: 300px; position: relative; z-index: 2; }
+#step { font-weight: 600; font-size: 34px; color: var(--cyan); margin-top: 60px; height: 40px; position: relative; z-index: 2; }
+#map { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 1; }
+#sub { position: absolute; left: 90px; right: 90px; bottom: 170px; z-index: 3; font-size: 40px; line-height: 1.3; font-weight: 600; text-align: center; color: var(--ink); background: rgba(8,19,28,.86); border: 1.5px solid var(--line); border-radius: 18px; padding: 22px 30px; }
+#end { position: absolute; inset: 0; z-index: 4; display: flex; flex-direction: column; justify-content: center; padding: 0 90px; background: var(--bg); opacity: 0; }
+#end h2 { font-family: "Bricolage Grotesque"; font-weight: 800; font-stretch: 90%; font-size: 110px; line-height: 1; letter-spacing: -0.025em; }
+#end .l { font-family: "Bricolage Grotesque"; font-weight: 700; font-size: 70px; margin-top: 70px; color: var(--cyan); }
+#end .s { font-size: 40px; color: var(--muted); margin-top: 22px; }
+#end img { height: 44px; margin-bottom: 90px; align-self: flex-start; }
+#label { position: absolute; z-index: 3; font-weight: 600; font-size: 34px; }
+</style></head>
+<body>
+<div class="frame"></div>
+<svg id="map" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="clip"><polygon id="clipPoly"/></clipPath>
+    <linearGradient id="elev" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3F6EA8"/><stop offset=".35" stop-color="#0F9C98"/><stop offset=".65" stop-color="#E2B33A"/><stop offset="1" stop-color="#D9773A"/>
+    </linearGradient>
+  </defs>
+  <g id="terrain" fill="none" stroke="#24394A" stroke-width="2.4"></g>
+  <g id="ortho" clip-path="url(#clip)" opacity="0"></g>
+  <rect id="elevRect" x="60" y="560" width="960" height="900" fill="url(#elev)" clip-path="url(#clip)" opacity="0"/>
+  <g id="elevLines" clip-path="url(#clip)" fill="none" stroke="#08131C" stroke-width="2" opacity="0"></g>
+  <g id="prints"></g>
+  <polyline id="path" fill="none" stroke="#34DEDC" stroke-width="4" stroke-linejoin="round"/>
+  <polygon id="boundary" fill="none" stroke="#F2C230" stroke-width="5" stroke-linejoin="round"/>
+  <g id="verts"></g>
+  <g id="drone" stroke="#F3F7F6" stroke-width="3.5" fill="#0E1F2C">
+    <line x1="-30" y1="-17" x2="30" y2="17"/><line x1="-30" y1="17" x2="30" y2="-17"/>
+    <circle cx="-30" cy="-17" r="12"/><circle cx="30" cy="17" r="12"/><circle cx="-30" cy="17" r="12"/><circle cx="30" cy="-17" r="12"/>
+    <rect x="-14" y="-10" width="28" height="20" rx="6"/>
+  </g>
+</svg>
+<div class="sheet">
+  <div class="top"><img src="../../../brand/logo-on-dark.png" alt=""></div>
+  <div id="step"></div>
+  <div id="title"></div>
+</div>
+<div id="sub"></div>
+<div id="end"><img src="../../../brand/logo-on-dark.png" alt="">
+  <h2>Planning a mapping job?</h2>
+  <p class="l">aersynk.io</p>
+  <p class="s">WhatsApp or call 073 290 4298</p>
+  <p class="s" style="margin-top:80px;font-size:30px">Animated illustration. Not real survey data.</p>
+</div>
+<script>
+const P = [[210,760],[830,690],[905,1230],[560,1420],[160,1260]];
+const $ = id => document.getElementById(id);
+const clamp = (x,a=0,b=1) => Math.max(a, Math.min(b, x));
+const prog = (t,a,b) => clamp((t-a)/(b-a));
+const ease = x => x<.5 ? 2*x*x : 1-Math.pow(-2*x+2,2)/2;
+
+// static terrain contours
+(function(){
+  let g = '';
+  for (let r=1; r<=11; r++) {
+    let d = '';
+    for (let i=0;i<=72;i++){ const a=i/72*Math.PI*2; const w=1+.15*Math.sin(3*a+1)+.08*Math.sin(5*a+r*.3);
+      const x=560+ r*58*w*Math.cos(a), y=1080+ r*48*w*Math.sin(a); d += (i?'L':'M')+x.toFixed(1)+','+y.toFixed(1); }
+    g += `<path d="${d}Z"/>`;
+  }
+  $('terrain').innerHTML = g;
+  $('clipPoly').setAttribute('points', P.map(p=>p.join(',')).join(' '));
+  $('boundary').setAttribute('points', P.map(p=>p.join(',')).join(' '));
+  // orthomosaic stand-in: fields, a road, a stockpile, buildings
+  const cols = ['#2E4A35','#3B5A3A','#4D5B3A','#5B5640','#3E4E3D','#55513A'];
+  let o = '';
+  let k = 0;
+  for (let y=600; y<1500; y+=110) for (let x=100; x<1000; x+=150) { o += `<polygon points="${x},${y} ${x+150},${y+18} ${x+140},${y+128} ${x-10},${y+110}" fill="${cols[k%cols.length]}" stroke="${cols[(k++)%cols.length]}" stroke-width="14"/>`; }
+  o += '<path d="M120,1180 C380,1100 600,1160 960,920" stroke="#9C8E74" stroke-width="26" fill="none"/>';
+  o += '<ellipse cx="640" cy="980" rx="110" ry="70" fill="#8A7A62"/><ellipse cx="640" cy="975" rx="70" ry="42" fill="#A39070"/>';
+  o += '<rect x="330" y="860" width="90" height="60" fill="#B9B6AC"/><rect x="440" y="870" width="60" height="50" fill="#A9A69C"/>';
+  $('ortho').innerHTML = o;
+  let e='';
+  for (let r=1;r<=9;r++){ let d=''; for (let i=0;i<=72;i++){const a=i/72*Math.PI*2; const w=1+.12*Math.sin(3*a+2);
+    const x=640+r*52*w*Math.cos(a), y=980+r*42*w*Math.sin(a); d+=(i?'L':'M')+x.toFixed(1)+','+y.toFixed(1);} e+=`<path d="${d}Z"/>`; }
+  $('elevLines').innerHTML = e;
+})();
+
+function xRange(y){ // where a horizontal line crosses the boundary
+  const xs=[]; for (let i=0;i<P.length;i++){ const [x1,y1]=P[i], [x2,y2]=P[(i+1)%P.length];
+    if ((y>=Math.min(y1,y2)) && (y<Math.max(y1,y2))) xs.push(x1+(y-y1)*(x2-x1)/(y2-y1)); }
+  xs.sort((a,b)=>a-b); return xs.length>=2 ? [xs[0]+30, xs[xs.length-1]-30] : null;
+}
+const pts = [];
+let dir = 1;
+for (let y=800; y<=1380; y+=72){ const r=xRange(y); if(!r) continue; if(dir>0){pts.push([r[0],y],[r[1],y]);} else {pts.push([r[1],y],[r[0],y]);} dir*=-1; }
+const segs=[]; let L=0; for(let i=1;i<pts.length;i++){ const d=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]); segs.push([L,d]); L+=d; }
+function along(s){ s=clamp(s,0,L); for(let i=0;i<segs.length;i++){ const [a,d]=segs[i]; if(s<=a+d){ const f=(s-a)/d; return [pts[i][0]+f*(pts[i+1][0]-pts[i][0]), pts[i][1]+f*(pts[i+1][1]-pts[i][1])]; } } return pts[pts.length-1]; }
+function pathUpTo(s){ const out=[pts[0]]; for(let i=0;i<segs.length;i++){ const [a,d]=segs[i]; if(s>=a+d) out.push(pts[i+1]); else { out.push(along(s)); break; } } return out.map(p=>p.map(v=>v.toFixed(1)).join(',')).join(' '); }
+
+const SCENES = [
+  {a:0, b:3.0, step:'', title:'How does a drone survey become a map?', sub:'How does a drone survey become a map?'},
+  {a:3.0, b:6.0, step:'Step 1: Plan', title:'Mark out the survey area.', sub:'First, we mark out the area to survey.'},
+  {a:6.0, b:11.2, step:'Step 2: Fly', title:'Parallel lines, overlapping photos.', sub:'The drone flies parallel lines across it, taking overlapping photos.'},
+  {a:11.2, b:17.4, step:'Step 3: Process', title:'A map you can measure, and the ground’s height.', sub:'Software matches those photos, and builds a map you can measure, plus a model of the ground’s height.'},
+  {a:17.4, b:22.0, step:'', title:'', sub:'Planning a mapping job? Get in touch at aersynk.io.'}
+];
+let lastScene=-1;
+window.render = function(t){
+  const si = SCENES.findIndex(s=>t>=s.a && t<s.b); const s = SCENES[si<0?SCENES.length-1:si];
+  if (si!==lastScene){ $('title').textContent=s.title; $('step').textContent=s.step; $('sub').textContent=s.sub; lastScene=si; }
+  $('title').style.opacity = clamp(Math.min((t-s.a)/0.35, (s.b-t)/0.25));
+  // map fade in
+  $('terrain').style.opacity = prog(t,0.2,1.2)*.9;
+  // boundary draw 3.2 - 5.4
+  const bp = ease(prog(t,3.2,5.4));
+  const per = P.reduce((acc,p,i)=>acc+Math.hypot(P[(i+1)%P.length][0]-p[0],P[(i+1)%P.length][1]-p[1]),0);
+  $('boundary').setAttribute('stroke-dasharray', per); $('boundary').setAttribute('stroke-dashoffset', per*(1-bp));
+  $('verts').innerHTML = P.map((p,i)=> bp*P.length>i ? `<circle cx="${p[0]}" cy="${p[1]}" r="11" fill="#F2C230"/>` : '').join('');
+  // flight 6.2 - 10.8
+  const fp = prog(t,6.2,10.8); const s1 = fp*L;
+  $('path').setAttribute('points', fp>0 ? pathUpTo(s1) : '');
+  $('path').style.opacity = 1 - prog(t,12.0,13.0);
+  const dpos = along(s1);
+  const showDrone = t>=5.6 && t<12.4;
+  $('drone').setAttribute('transform', `translate(${dpos[0]},${dpos[1]-6}) scale(${showDrone?1:0})`);
+  $('drone').style.opacity = showDrone ? clamp(Math.min((t-5.6)/0.4,(12.4-t)/0.4)) : 0;
+  // footprints every 70px of travel
+  let fp_html=''; const fade = 1 - prog(t,12.2,13.4);
+  if (s1>1) for (let s=0; s<=s1; s+=70){ const q=along(s); fp_html += `<rect x="${q[0]-70}" y="${q[1]-48}" width="140" height="96" fill="#34DEDC" fill-opacity=".05" stroke="#34DEDC" stroke-opacity=".35" stroke-width="1.5"/>`; }
+  $('prints').innerHTML = fp_html; $('prints').style.opacity = fade;
+  // ortho and elevation
+  $('ortho').setAttribute('opacity', ease(prog(t,11.6,13.4)));
+  const ep = ease(prog(t,14.6,15.8));
+  $('elevRect').setAttribute('opacity', ep*.78); $('elevLines').setAttribute('opacity', ep*.55);
+  // end card
+  $('end').style.opacity = ease(prog(t,17.3,17.9));
+  $('sub').style.opacity = t>17.3 ? 1 - prog(t,17.3,17.6) : 1;
+};
+window.render(0);
+</script>
+</body></html>

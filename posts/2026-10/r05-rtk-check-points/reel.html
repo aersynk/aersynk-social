@@ -24,8 +24,8 @@ text { font-family: "Instrument Sans"; }
 <p class="l">aersynk.io</p><p class="s">WhatsApp or call 073 290 4298</p>
 <p class="n">Animated illustration. Voice is computer-generated.</p></div>
 <script>
-const META = [{"a": 0.0, "b": 4.383, "step": "Myth", "title": "\u201cRTK means no ground control.\u201d", "sub": "Myth: an RTK drone means you no longer need ground control."}, {"a": 4.383, "b": 10.856, "step": "What RTK does", "title": "Better photo positions.", "sub": "RTK improves the position of every photo the drone takes. That is a real step forward."}, {"a": 10.856, "b": 16.597, "step": "What proves it", "title": "Check points prove accuracy.", "sub": "But independent check points, measured on the ground, are how you prove the final map is accurate."}, {"a": 16.597, "b": 20.827, "step": "Tip", "title": "Ask for the report.", "sub": "So ask any survey supplier for their check point report."}];
-const END = 20.827;
+const META = [{"a": 0.0, "b": 5.061, "step": "Myth", "title": "\u201cRTK means no ground control.\u201d", "sub": "Myth: an RTK drone means you no longer need ground control."}, {"a": 5.061, "b": 11.979, "step": "What RTK does", "title": "Better photo positions.", "sub": "RTK improves the position of every photo the drone takes. That is a real step forward."}, {"a": 11.979, "b": 18.597, "step": "What proves it", "title": "Check points prove accuracy.", "sub": "But independent check points, measured on the ground, are how you prove the final map is accurate."}, {"a": 18.597, "b": 23.276, "step": "Tip", "title": "Ask for the report.", "sub": "So ask any survey supplier for their check point report."}];
+const END = 23.276;
 const clamp = (x,a=0,b=1) => Math.max(a, Math.min(b, x));
 const prog = (t,a,b) => b<=a ? (t>=a?1:0) : clamp((t-a)/(b-a));
 const ease = x => x<.5 ? 2*x*x : 1-Math.pow(-2*x+2,2)/2;
