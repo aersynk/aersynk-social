@@ -33,6 +33,8 @@ Read this first on every scheduled run (daily, 06:47 SAST). It is the rulebook f
    default `bf_emma`, British woman, chosen by Kwazi). Use the same voice on every Reel. Piper remains available with `REEL_VOICE_ENGINE=piper`.
    Pronunciation: AerSynk is said "Air Sync" and aersynk.io is said "air sync dot eye oh" (handled in `SAY` in
    `tools/reel_engine.py`; add any new brand words there). Voice speed 1.0: a natural pace, not slow, not fast.
+   Reels in `posts/2026-10/*-uk/` have this voice. The older folders without `-uk` have the old robotic voice:
+   never schedule those videos; always use the `-uk` version.
 3. Reels: add a spec to a `tools/reels_YYYY_MM.py` file (see `tools/reels_2026_10.py`, `tools/reel_engine.py`, `tools/art.py`),
    run it, then check frames with `tools/contact_sheet.py` and fix overlaps or overflowing text before publishing.
 4. Images: follow `tools/images_2026_10.py` (1080x1350, `tools/render.py`). Look at every image before using it.
