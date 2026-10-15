@@ -116,7 +116,7 @@ def post14():
 
 
 def post13():
-    steps = [("Brief", "Site, dates, needs"), ("Plan", "Kit and approvals"), ("Fly", "On site, with checks"), ("Deliver", "In your format")]
+    steps = [("Brief", "Site, dates, needs"), ("Plan", "Kit and approvals"), ("Fly", "With checks"), ("Deliver", "In your format")]
     art = ""
     for i, (t, s) in enumerate(steps):
         x, y = 100 + (i % 2) * 480, 100 + (i // 2) * 250
@@ -129,6 +129,37 @@ def post13():
         + '<p class="small" style="position:relative;z-index:2;margin-bottom:22px">A BVLOS-certified remote pilot. Flights run under an approved partner operator\'s certificate, confirmed with you before booking.</p>'
         + foot("aersynk.io", "WhatsApp 073 290 4298"), seed=61))
     return [p]
+
+
+def doc(x, y, w, h, big, small, col, extra=""):
+    return (f'<g {extra}><path d="M{x},{y} h{w - 60} l60,60 v{h - 60} h-{w} z" fill="{PANEL}" stroke="{col}" stroke-width="4"/>'
+            + label(x + w / 2, y + h / 2 + 10, big, 84, col, weight=800) + label(x + w / 2, y + h / 2 + 70, small, 30, MU, weight=500) + '</g>')
+
+
+def post15():
+    f, T = "15-roc-when-you-hire", 5
+    out = [slide(f, 1, T, "Rules and safety", "Hiring a drone service in SA? Ask for these two things.",
+                 "Two documents show a commercial drone job is set up properly.",
+                 doc(120, 140, 380, 480, "ROC", "The operator", CY) + doc(580, 140, 380, 480, "RPL", "The pilot", GO), 71, size="m", vb="100 120 880 520")]
+    building = (f'<rect x="200" y="300" width="300" height="420" rx="8" fill="{PANEL}" stroke="{INK}" stroke-width="4"/>'
+                + "".join(f'<rect x="{240 + c * 80}" y="{350 + r * 90}" width="50" height="50" fill="none" stroke="{MU}" stroke-width="3"/>' for r in range(4) for c in range(3)))
+    out.append(slide(f, 2, T, "1. The operator", "The ROC.",
+                     "An RPAS Operator Certificate, issued by SACAA under Part 101. It covers the organisation that runs the flight.",
+                     building + doc(580, 260, 320, 440, "ROC", "Operator", CY), 73, vb="160 240 780 500"))
+    card_ = (f'<rect x="520" y="380" width="420" height="260" rx="22" fill="{PANEL}" stroke="{GO}" stroke-width="4"/>'
+             + label(730, 490, "RPL", 84, GO, weight=800) + label(730, 560, "Remote Pilot Licence", 30, MU, weight=500))
+    out.append(slide(f, 3, T, "2. The pilot", "The pilot's licence.",
+                     "A Remote Pilot Licence (RPL) for the person at the controls, rated for the aircraft and the type of flight.",
+                     person(320, 560, 2.0, INK) + card_, 75, vb="160 300 820 420"))
+    link = (doc(120, 160, 340, 440, "ROC", "Partner operator", CY)
+            + f'<path d="M480,380 h120" stroke="{MU}" stroke-width="6" stroke-dasharray="10 10"/>'
+            + f'<rect x="620" y="250" width="340" height="260" rx="22" fill="{PANEL}" stroke="{GO}" stroke-width="4"/>'
+            + label(790, 360, "Our pilot", 50, GO, weight=800) + label(790, 420, "BVLOS-certified", 30, MU, weight=500))
+    out.append(slide(f, 4, T, "How AerSynk works", "Our flights run under a partner's ROC.",
+                     "AerSynk does not hold its own ROC. Our BVLOS-certified remote pilot flies under an approved partner operator's certificate, and we confirm the details with you before booking.",
+                     link, 77, size="m", vb="100 140 880 480"))
+    out.append(cta_slide(f, 5, T, "Questions about the rules?", "Send us a message. General information, not legal advice: check current requirements with SACAA.", 79))
+    return out
 
 
 def li05():
@@ -160,5 +191,7 @@ def li12():
 
 
 if __name__ == "__main__":
-    files = post07() + post08() + post13() + post14() + li05() + li09() + li12()
+    sel = sys.argv[1:]
+    fns = {"07": post07, "08": post08, "13": post13, "14": post14, "15": post15, "li05": li05, "li09": li09, "li12": li12}
+    files = [f for k, fn in fns.items() if not sel or k in sel for f in fn()]
     print("\n".join(str(f) for f in files))

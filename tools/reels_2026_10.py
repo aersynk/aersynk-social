@@ -305,7 +305,89 @@ def r10():
         {"step": "The rules", "title": "People still run it.", "voice": "But remote operations still need an approved operator and a responsible remote pilot.", "svg": rules, "hold": 0.3}],
         "end": {"title": "Thinking about docks?", "voice": "Thinking about drone docks? Ask us at aersynk dot io."}}
 
-REELS = {"r02": r02, "r03": r03, "r04": r04, "r05": r05, "r06": r06, "r07": r07, "r08": r08, "r09": r09, "r10": r10}
+# ---------------- R11 AerSynk Survey (plan item 17) ----------------
+def layer(y, col, name, extra=""):
+    return (f'<g {extra}><polygon points="540,{y} 900,{y + 90} 540,{y + 180} 180,{y + 90}" fill="{PANEL}" fill-opacity=".92" stroke="{col}" stroke-width="4"/>'
+            + label(540, y + 102, name, 34, col, weight=700) + '</g>')
+
+
+SENSORS = [("Photos", CY), ("LiDAR", BL), ("Magnetics", VI), ("Spectral", GO)]
+
+
+def r11():
+    sensors = (f'<g {a(inn="0,0.6")}>' + drone(540, 170, 2.0) + '</g>'
+               + "".join(f'<g {a(inn=f"{0.6 + i * 0.35:.2f},{1.0 + i * 0.35:.2f}", move=f"{0.6 + i * 0.35:.2f},{1.0 + i * 0.35:.2f},0,40")}>'
+                         f'<rect x="{100 + (i % 2) * 460}" y="{380 + (i // 2) * 200}" width="420" height="150" rx="20" fill="{PANEL}" stroke="{c}" stroke-width="4"/>'
+                         + label(310 + (i % 2) * 460, 470 + (i // 2) * 200, t, 46, c, weight=700) + '</g>' for i, (t, c) in enumerate(SENSORS)))
+    boxes = ""
+    for i, (t, c) in enumerate(SENSORS):
+        x, y = 110 + (i % 2) * 560, 140 + (i // 2) * 300
+        boxes += (f'<g {a(inn=f"{0.2 + i * 0.3:.1f},{0.6 + i * 0.3:.1f}")}><rect x="{x}" y="{y}" width="300" height="200" rx="16" fill="{PANEL}" stroke="{c}" stroke-width="4"/>'
+                  + label(x + 150, y + 90, t, 40, c, weight=700) + label(x + 150, y + 145, "Separate tool", 28, MU, weight=500) + '</g>')
+    manual = boxes + f'<g {a(inn="1.6,2.2")}>' + person(540, 470, 1.2, AM) + '</g>' + "".join(
+        f'<line x1="540" y1="420" x2="{x}" y2="{y}" stroke="{AM}" stroke-width="3" stroke-dasharray="6 10" pathLength="1" {a(draw="1.8,2.6")}/>'
+        for x, y in [(410, 290), (670, 290), (410, 590), (670, 590)]) + f'<g {a(inn="2.4,3.0")}>' + label(540, 820, "Lined up by hand", 40, INK) + '</g>'
+    stack = "".join(layer(560 - i * 130, c, t, a(inn=f"{0.2 + i * 0.35:.2f},{0.6 + i * 0.35:.2f}", move=f"{0.2 + i * 0.35:.2f},{0.6 + i * 0.35:.2f},0,-60"))
+                    for i, (t, c) in enumerate(reversed(SENSORS))) + f'<g {a(inn="1.8,2.4")}>' + label(540, 880, "Every sensor on the same map", 40, INK) + '</g>'
+    steps = [("Plan", CY), ("Fly", BL), ("Process", VI), ("Deliver", GO)]
+    flow = "".join(f'<g {a(inn=f"{0.2 + i * 0.45:.2f},{0.6 + i * 0.45:.2f}")}><rect x="240" y="{120 + i * 170}" width="600" height="120" rx="20" fill="{PANEL}" stroke="{c}" stroke-width="4"/>'
+                   + label(540, 197 + i * 170, t, 48, c, weight=700) + '</g>' for i, (t, c) in enumerate(steps))
+    flow += "".join(f'<path d="M540,{240 + i * 170} v40" stroke="{MU}" stroke-width="4" {a(inn=f"{0.5 + i * 0.45:.2f},{0.8 + i * 0.45:.2f}")}/>' for i in range(3))
+    proto = (layer(300, BL, "Demo data") + f'<g {a(inn="0.6,1.2")}><rect x="250" y="620" width="580" height="110" rx="55" fill="{PANEL}" stroke="{GO}" stroke-width="4"/>'
+             + label(540, 690, "Working prototype", 44, GO, weight=700) + '</g>'
+             + f'<g {a(inn="1.4,2.0")}>' + label(540, 830, "Real-data processing: one sensor at a time", 34, INK) + '</g>')
+    return {"id": "r11-aersynk-survey", "folder": f"{F}/r11-aersynk-survey-uk", "note": NOTE + " Prototype shown on demo data.", "scenes": [
+        {"step": "What we are building", "title": "One survey, many sensors.", "voice": "One drone survey can mean photos, LiDAR, magnetic data and spectral data.", "svg": sensors},
+        {"step": "The problem", "title": "Four tools. One analyst.", "voice": "Usually each one lives in separate software, and someone lines them all up by hand.", "svg": manual},
+        {"step": "AerSynk Survey", "title": "Every sensor, one map.", "voice": "AerSynk Survey puts every flight and every sensor on the same map.", "svg": stack},
+        {"step": "One workspace", "title": "From plan to deliverable.", "voice": "From planning the flights to the finished deliverable, in one workspace.", "svg": flow},
+        {"step": "Where it stands", "title": "A working prototype.", "voice": "Today it is a working prototype on demo data, and we are adding real-data processing one sensor at a time.", "svg": proto, "hold": 0.3}],
+        "end": {"title": "Survey or exploration team?", "line": "aersynk.io", "sub": "Request early access",
+                "voice": "Survey or exploration team? Request early access at aersynk dot io."}}
+
+
+# ---------------- R12 AerSynk Rescue (plan item 24) ----------------
+MOUNTAIN = "M60,900 L60,520 L180,470 L330,430 L760,420 L880,450 L1020,520 L1020,900 Z"
+
+
+def phone(x, y, s=1.0, extra=""):
+    return (f'<g transform="translate({x},{y}) scale({s})" {extra}><rect x="-90" y="-170" width="180" height="340" rx="26" fill="{PANEL}" stroke="{INK}" stroke-width="5"/>'
+            f'<circle cx="0" cy="0" r="58" fill="{SOS}" fill-opacity=".85" stroke="{SOS}" stroke-width="4"/>' + label(0, 14, "SOS", 40, INK, weight=800) + '</g>')
+
+
+def r12():
+    mtn = f'<path d="{MOUNTAIN}" fill="#14283A" stroke="{BL}" stroke-width="4"/>'
+    hiker = (f'<g {a(inn="0,0.8")}>' + mtn + '</g>' + f'<g {a(inn="0.8,1.4")}>' + person(700, 400, 0.9, AM) + '</g>'
+             + f'<g {a(inn="1.4,2.0")}>' + label(540, 970, "Somewhere on the mountain", 36, INK) + '</g>')
+    sos = (f'<g {a(grow="0.2,0.9")} {GROW}>' + phone(540, 470, 1.6) + '</g>'
+           + "".join(f'<circle cx="540" cy="470" r="{140 + i * 70}" fill="none" stroke="{SOS}" stroke-width="4" {a(inn=f"{1.0 + i * 0.3:.1f},{1.3 + i * 0.3:.1f}")}/>' for i in range(3))
+           + f'<g {a(inn="1.8,2.4")}>' + label(540, 920, "One press starts the rescue", 38, INK) + '</g>')
+    fly = (mtn + dock(220, 760, 0.6) + person(800, 400, 0.7, AM)
+           + f'<circle cx="800" cy="300" r="40" fill="none" stroke="{SOS}" stroke-width="4" {a(inn="0.2,0.6")}/>'
+           + f'<path d="M220,700 C360,400 540,250 660,240" fill="none" stroke="{CY}" stroke-width="4" stroke-dasharray="6 12" pathLength="1" {a(draw="0.4,2.2")}/>'
+           + f'<g {a(move="0.4,2.4,-460,440")}>' + drone(680, 230, 1.3) + '</g>')
+    team = (mtn + person(800, 400, 0.7, AM) + drone(660, 200, 1.3)
+            + f'<g {a(inn="0.4,1.0")}>' + pin(800, 300, GO) + '</g>'
+            + f'<g {a(inn="1.0,1.6")}><rect x="140" y="80" width="420" height="110" rx="18" fill="{PANEL}" stroke="{GO}" stroke-width="4"/>'
+            + label(350, 148, "Rescue team", 42, GO, weight=700) + '</g>'
+            + f'<g {a(inn="1.6,2.2")}>' + person(250, 740, 0.8, INK) + person(360, 740, 0.8, INK) + '</g>')
+    status = (f'<g {a(inn="0,0.6")}><rect x="170" y="240" width="740" height="150" rx="75" fill="{PANEL}" stroke="{GO}" stroke-width="5"/>'
+              + label(540, 335, "In development", 60, GO, weight=800) + '</g>'
+              + f'<g {a(inn="0.8,1.4")}>' + label(540, 520, "Not live yet.", 52, INK, weight=700) + '</g>'
+              + f'<g {a(inn="1.4,2.0")}>' + label(540, 640, "In an emergency, call the", 36, MU, weight=500)
+              + label(540, 690, "official rescue services.", 36, MU, weight=500) + '</g>')
+    return {"id": "r12-aersynk-rescue", "folder": f"{F}/r12-aersynk-rescue-uk", "note": "Concept animation. AerSynk Rescue is in development, not live. Voice is computer-generated.", "scenes": [
+        {"step": "What we are building", "title": "A hiker needs help.", "voice": "Picture a hiker who needs help, somewhere on Table Mountain.", "svg": hiker},
+        {"step": "AerSynk Rescue", "title": "One SOS press.", "voice": "The idea behind AerSynk Rescue: one press of an SOS button starts the whole rescue.", "svg": sos},
+        {"step": "The concept", "title": "A drone launches from its dock.", "voice": "A drone launches from its dock and flies toward the signal.", "svg": fly},
+        {"step": "The aim", "title": "Help the team find them.", "voice": "The aim is to help the rescue team locate the hiker.", "svg": team},
+        {"step": "Where it stands", "title": "Not live yet.", "voice": "AerSynk Rescue is in development and not live yet. In an emergency, always call the official rescue services.", "svg": status, "hold": 0.3}],
+        "end": {"title": "Rescue organisation, guide or park?", "line": "aersynk.io", "sub": "Register as a partner",
+                "voice": "Rescue organisation, guide or park? Register as a partner at aersynk dot io."}}
+
+
+REELS = {"r02": r02, "r03": r03, "r04": r04, "r05": r05, "r06": r06, "r07": r07, "r08": r08, "r09": r09, "r10": r10,
+         "r11": r11, "r12": r12}
 
 if __name__ == "__main__":
     keys = sys.argv[1:] or list(REELS)

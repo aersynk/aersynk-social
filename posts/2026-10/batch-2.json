@@ -1,0 +1,84 @@
+{
+ "note": "Batch 2: built and scheduled on 15 Oct 2026 (daily top-up to 10 per channel). Times are South African (+02:00). Facebook receives Instagram posts through Meta's automatic sharing.",
+ "built": {
+  "r11-aersynk-survey-uk": {
+   "plan": "17 Survey Reel",
+   "seconds": 34.5,
+   "cover_ms": 24746,
+   "checked": "contact sheet 2026-10-15"
+  },
+  "r12-aersynk-rescue-uk": {
+   "plan": "24 Rescue Reel",
+   "seconds": 32.6,
+   "cover_ms": 22164,
+   "checked": "contact sheet 2026-10-15, drone/pin overlap fixed"
+  },
+  "15-roc-when-you-hire": {
+   "plan": "15 ROC carousel",
+   "slides": 5,
+   "alt": [
+    "Hiring a drone service in South Africa? Ask for these two things: the ROC (the operator) and the RPL (the pilot).",
+    "The ROC: an RPAS Operator Certificate, issued by SACAA under Part 101, covering the organisation that runs the flight. Illustration of a building and a certificate.",
+    "The pilot's licence: a Remote Pilot Licence (RPL) for the person at the controls, rated for the aircraft and the type of flight.",
+    "How AerSynk works: AerSynk does not hold its own ROC. Its BVLOS-certified remote pilot flies under an approved partner operator's certificate, confirmed before booking.",
+    "Questions about the rules? General information, not legal advice. aersynk.io, WhatsApp or call 073 290 4298."
+   ],
+   "checked": "2026-10-15"
+  },
+  "13-pilot-for-hire": {
+   "fix": "step 3 label shortened to 'With checks' so it no longer crowds circle 4 (re-rendered 2026-10-15)"
+  }
+ },
+ "posts": [
+  {
+   "key": "ig-r02",
+   "channel": "instagram",
+   "type": "reel",
+   "dueAt": "2026-10-19T12:30:00+02:00",
+   "video": "r02-what-is-gsd-uk",
+   "thumbnailOffset": 21073,
+   "text": "What is GSD, and why does flight height matter so much?\n\nGround sampling distance is the size of one image pixel, measured on the ground.\n\nFly lower: each pixel covers less ground, so you see more detail, but you need more flight lines.\nFly higher: you cover the site faster, with less detail.\n\nSo pick the GSD for the decision you need to make. Checking cracks needs far finer detail than a site overview.\n\nPlanning a survey? Send us a message or visit aersynk.io.\n\nAnimated illustration. Voice-over is computer-generated.\n\n#GSD #DroneMapping #Photogrammetry #DroneSurvey #Surveying #GIS #AerSynk #SouthAfrica"
+  },
+  {
+   "key": "ig-13",
+   "channel": "instagram",
+   "type": "post",
+   "dueAt": "2026-10-19T18:30:00+02:00",
+   "assets": [
+    "13-pilot-for-hire/image.jpg"
+   ],
+   "alt": [
+    "Need a drone pilot for a job? Service tags: agriculture, mapping and surveying, security, inspection, filming. Four steps: brief, plan, fly with checks, deliver in your format. Flights run under an approved partner operator's certificate. aersynk.io, WhatsApp 073 290 4298."
+   ],
+   "text": "Need a drone pilot for a job?\n\nAerSynk offers a BVLOS-certified remote pilot for agriculture, mapping and surveying, security, inspection and filming.\n\nHow it works:\n1. Brief: you share the site, the dates and what you need.\n2. Plan: we confirm the kit, the operator certificate and any approvals.\n3. Fly: on site, with checks before and after.\n4. Deliver: the data or results in the format you asked for.\n\nFlights run under an approved partner operator's certificate, confirmed with you before booking.\n\nRequest a pilot at aersynk.io or WhatsApp 073 290 4298.\n\n#DronePilot #DroneServices #DroneMapping #DroneInspection #Agritech #AerSynk #SouthAfrica #CapeTown"
+  },
+  {
+   "key": "tt-r11",
+   "channel": "tiktok",
+   "dueAt": "2026-10-19T12:30:00+02:00",
+   "video": "r11-aersynk-survey-uk",
+   "thumbnailOffset": 24746,
+   "text": "One drone survey, four kinds of data. Here is what we are building to put them all on one map (working prototype, demo data). #drone #dronesurvey #geospatial #learnontiktok #southafrica"
+  },
+  {
+   "key": "tt-r12",
+   "channel": "tiktok",
+   "dueAt": "2026-10-19T19:30:00+02:00",
+   "video": "r12-aersynk-rescue-uk",
+   "thumbnailOffset": 22164,
+   "text": "One SOS press to start a mountain rescue. A concept we are building for Table Mountain: in development, not live. In an emergency, always call the official rescue services. #drone #searchandrescue #tablemountain #capetown #southafrica"
+  },
+  {
+   "key": "li-r10",
+   "channel": "linkedin",
+   "dueAt": "2026-10-28T08:00:00+02:00",
+   "video": "r10-drone-docks-uk",
+   "text": "What does a drone dock actually do?\n\nA dock is a weatherproof box that houses a drone, charges it and launches it. Missions can run on a schedule, such as a daily site check, or on demand, and the data uploads to a cloud platform.\n\nWhat a dock does not do is remove the rules. Remote operations still need an approved operator and a responsible remote pilot.\n\nBefore buying docks, be clear on the question the flights must answer, and how often it needs answering. Thinking about docks for your site? Ask about consulting at https://aersynk.io\n\n(Animated illustration, computer-generated voice.)\n\n#DroneDock #EnterpriseDrones #DroneIntegration #Automation #SouthAfrica"
+  }
+ ],
+ "ready_captions": {
+  "ig-r11": "What does it take to put every drone sensor on one map?\n\nOne survey can mean photos, LiDAR, magnetic data and spectral data. Usually each lives in separate software, and someone lines them up by hand.\n\nAerSynk Survey puts every flight and every sensor on the same map, from planning to the finished deliverable. Today it is a working prototype on demo data, and we are adding real-data processing one sensor at a time.\n\nSurvey or exploration team? Request early access at aersynk.io.\n\nAnimated illustration on demo data. Voice-over is computer-generated.\n\n#DroneSurvey #Geospatial #LiDAR #Photogrammetry #Exploration #Mining #AerSynk #SouthAfrica",
+  "ig-r12": "One SOS press to start a mountain rescue.\n\nAerSynk Rescue is a concept we are building for hikers, starting on Table Mountain: an SOS press starts the rescue, and a drone launches from its dock toward the signal to help the rescue team locate the hiker.\n\nIt is in development and not live yet. In an emergency, always call the official rescue services.\n\nRescue organisation, guide or park? Register as a partner at aersynk.io.\n\nConcept animation. Voice-over is computer-generated.\n\n#AerSynkRescue #SearchAndRescue #TableMountain #Hiking #CapeTown #DroneTechnology #AerSynk #SouthAfrica",
+  "ig-15": "Hiring a drone service in South Africa? Ask for these two things.\n\n1. The operator's ROC: an RPAS Operator Certificate, issued by SACAA under Part 101. It covers the organisation that runs the flight.\n2. The pilot's licence: a Remote Pilot Licence (RPL) for the person at the controls.\n\nHow we work: AerSynk does not hold its own ROC. Our BVLOS-certified remote pilot flies under an approved partner operator's certificate, and we confirm the details with you before booking.\n\nGeneral information, not legal advice. Check current requirements with SACAA.\n\nQuestions about the rules? Send us a message.\n\n#SACAA #DroneRules #CommercialDrones #DronePilot #DroneServices #AerSynk #SouthAfrica"
+ }
+}
