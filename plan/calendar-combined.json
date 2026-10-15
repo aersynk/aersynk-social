@@ -1,6 +1,6 @@
 {
  "title": "AerSynk combined calendar: images + Reels (original 30-day plan kept)",
- "updated": "2026-10-14",
+ "updated": "2026-10-15",
  "timezone": "Africa/Johannesburg (+02:00)",
  "channels": {
   "instagram": {
@@ -26,7 +26,7 @@
   {
    "date": "2026-10-30",
    "ig": "13 pilot for hire (single)",
-   "status": "built"
+   "status": "scheduled IG 2026-10-19 18:30 (6ad05d1a6ff8a3fe7b390a04)"
   },
   {
    "date": "2026-11-01",
@@ -36,20 +36,20 @@
   {
    "date": "2026-11-02",
    "ig": "15 ROC: what it means when you hire (carousel)",
-   "status": "to build"
+   "status": "built (posts/2026-10/15-roc-when-you-hire, caption in batch-2.json ready_captions)"
   },
   {
    "date": "2026-11-03",
    "ig": "R02 What is GSD (Reel)",
    "tiktok": "R02",
-   "status": "built"
+   "status": "R02 scheduled IG 2026-10-19 12:30 (6ad05d1678f377d888b18f51); already used on TikTok"
   },
   {
    "date": "2026-11-04",
    "ig": "17 Survey Reel (original plan)",
    "tiktok": "17",
    "linkedin": "16 image",
-   "status": "to build"
+   "status": "17 built as r11-aersynk-survey-uk; TikTok scheduled 2026-10-19 12:30 (6ad05d1c7b2b6a2866e44701); IG and LinkedIn still to schedule; 16 image to build"
   },
   {
    "date": "2026-11-05",
@@ -85,7 +85,7 @@
    "date": "2026-11-11",
    "ig": "24 Rescue Reel (original plan)",
    "tiktok": "24",
-   "status": "to build"
+   "status": "24 built as r12-aersynk-rescue-uk; TikTok scheduled 2026-10-19 19:30 (6ad05d1f6ff8a3fe7b390b47); IG and LinkedIn (25) still to schedule"
   },
   {
    "date": "2026-11-12",
@@ -114,14 +114,6 @@
  ],
  "scheduled_now": {
   "instagram": [
-   [
-    "2026-10-14 13:00",
-    "01 Meet AerSynk (carousel)"
-   ],
-   [
-    "2026-10-14 18:30",
-    "R10 Drone docks (Reel)"
-   ],
    [
     "2026-10-15 12:30",
     "03 Flight to map (Reel)"
@@ -153,17 +145,17 @@
    [
     "2026-10-18 18:30",
     "R04 Stockpile (Reel)"
+   ],
+   [
+    "2026-10-19 12:30",
+    "R02 What is GSD (Reel) (6ad05d1678f377d888b18f51)"
+   ],
+   [
+    "2026-10-19 18:30",
+    "13 Pilot for hire (image) (6ad05d1a6ff8a3fe7b390a04)"
    ]
   ],
   "tiktok": [
-   [
-    "2026-10-14 13:00",
-    "03"
-   ],
-   [
-    "2026-10-14 19:30",
-    "R10"
-   ],
    [
     "2026-10-15 12:30",
     "R02 (6acf5c0972ac8a207846a09a)"
@@ -195,13 +187,17 @@
    [
     "2026-10-18 19:30",
     "R04"
+   ],
+   [
+    "2026-10-19 12:30",
+    "R11 Survey (6ad05d1c7b2b6a2866e44701)"
+   ],
+   [
+    "2026-10-19 19:30",
+    "R12 Rescue (6ad05d1f6ff8a3fe7b390b47)"
    ]
   ],
   "linkedin": [
-   [
-    "2026-10-14 13:00",
-    "02 Why AerSynk"
-   ],
    [
     "2026-10-15 08:00",
     "04 Flight to map video"
@@ -237,6 +233,10 @@
    [
     "2026-10-27 08:00",
     "R03 video (6acf5c524aaa0bb6abd54669)"
+   ],
+   [
+    "2026-10-28 08:00",
+    "R10 Drone docks video (6ad05d2278f377d888b191f0)"
    ]
   ]
  },
@@ -251,7 +251,9 @@
    "08",
    "R09",
    "R04",
-   "R10"
+   "R10",
+   "R02",
+   "13"
   ],
   "tiktok": [
    "03",
@@ -263,7 +265,9 @@
    "R09",
    "R07",
    "R04",
-   "R10"
+   "R10",
+   "R11",
+   "R12"
   ],
   "linkedin": [
    "02",
@@ -275,20 +279,65 @@
    "R07",
    "12",
    "R02",
-   "R03"
+   "R03",
+   "R10"
   ]
  },
  "built_not_yet_used": {
   "instagram": [
-   "13 pilot for hire (single)",
    "14 NDVI (carousel)",
-   "R02",
+   "15 ROC (carousel)",
    "R03",
    "R06",
-   "R07"
+   "R07",
+   "R11 Survey",
+   "R12 Rescue"
   ],
   "tiktok": [],
-  "linkedin": []
+  "linkedin": [
+   "R05",
+   "R08",
+   "R09",
+   "R11 Survey",
+   "R12 Rescue"
+  ]
  },
- "first_posts": "Moved to 13:00 on 14 Oct at Kwazi's request (start as soon as possible)."
+ "first_posts": "Moved to 13:00 on 14 Oct at Kwazi's request (start as soon as possible).",
+ "sent_log": [
+  {
+   "date": "2026-10-14",
+   "channel": "instagram",
+   "post": "01 Meet AerSynk (carousel)",
+   "bufferId": "6acf5858f23e87ac78229cbd",
+   "status": "sent"
+  },
+  {
+   "date": "2026-10-14",
+   "channel": "linkedin",
+   "post": "02 Why AerSynk",
+   "bufferId": "6acf585ff23e87ac78229f92",
+   "status": "sent"
+  },
+  {
+   "date": "2026-10-14",
+   "channel": "tiktok",
+   "post": "03 Flight to map (old non-uk voice file)",
+   "bufferId": "6acf58d10901e7a658272ff8",
+   "status": "sent"
+  },
+  {
+   "date": "2026-10-14",
+   "channel": "instagram",
+   "post": "R10 Drone docks (Reel)",
+   "bufferId": "6acf590a72ac8a207845f4db",
+   "status": "sent"
+  },
+  {
+   "date": "2026-10-14",
+   "channel": "tiktok",
+   "post": "R10 Drone docks",
+   "bufferId": "6acf590c0901e7a658273a70",
+   "status": "sent"
+  }
+ ]
 }
